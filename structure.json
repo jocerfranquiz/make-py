@@ -1,0 +1,113 @@
+{
+  "name": "python-project",
+  "version": "0.1.0",
+  "author": "Some Clever Programmer",
+  "date": "2022-04-13",
+  "structure": [
+    {
+      "type": "directory",
+      "name": "project",
+      "contents": [
+        {
+          "type": "file",
+          "name": "LICENSE.txt"
+        },
+        {
+          "type": "file",
+          "name": "README.md"
+        },
+        {
+          "type": "directory",
+          "name": "project",
+          "contents": [
+            {
+              "type": "file",
+              "name": "Makefile"
+            },
+            {
+              "type": "directory",
+              "name": "app",
+              "contents": [
+                {
+                  "type": "file",
+                  "name": "__init__.py"
+                },
+                {
+                  "type": "file",
+                  "name": "__main__.py"
+                },
+                {
+                  "type": "file",
+                  "name": "app.py"
+                },
+                {
+                  "type": "directory",
+                  "name": "resources",
+                  "contents": []
+                }
+              ]
+            },
+            {
+              "type": "directory",
+              "name": "docs",
+              "contents": [
+                {
+                  "type": "file"
+                },
+                {
+                  "name": "index.md"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "configure_project.sh"
+            },
+            {
+              "type": "file",
+              "name": "dev.Dokerfile"
+            },
+            {
+              "type": "file",
+              "name": "prod.Dokerfile"
+            },
+            {
+              "type": "file",
+              "name": "pytest.ini"
+            },
+            {
+              "type": "file",
+              "name": "requirements.txt"
+            },
+            {
+              "type": "file",
+              "name": "setup.cfg"
+            },
+            {
+              "type": "directory",
+              "name": "tests",
+              "contents": [
+                {
+                  "type": "file",
+                  "name": "__init__.py"
+                },
+                {
+                  "type": "file",
+                  "name": "conftest.py"
+                },
+                {
+                  "type": "file",
+                  "name": "context.py"
+                },
+                {
+                  "type": "file",
+                  "name": "test_app.py"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
