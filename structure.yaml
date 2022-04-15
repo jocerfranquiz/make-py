@@ -4,7 +4,7 @@ author: Some Clever Programmer
 date: '2022-04-13'
 structure:
 - type: directory
-  name: project 
+  name: python-project 
   contents:
   - type: file
     name: LICENSE.txt
