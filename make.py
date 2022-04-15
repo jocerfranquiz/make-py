@@ -1,25 +1,14 @@
 import yaml
 import os
 
-def make_directory(entries): #TODO fix recursion over directories
-  # for entry in entries:
-  #   if isinstance(entries,dict):
-  #     if entry == 'name':
-  #       os.makedirs(entry['name'], exist_ok=True)
-  #       os.chdir(entry['name'])
-  #     elif entry == 'contents':
-  #       make_directory(entries['contents'])
-  #       os.chdir('..')
-  #     if entry["type"] == "file":
-  #       with open(entry["name"], "w"): pass
-  #     #if entry["type"] == "link":
-  #     #  os.symlink(entry["name"], entry["target"])
+def make_directory(entries): 
   if isinstance(entries, dict):
     type_file = None
     type_directory = None
     for key in entries:
       if key == 'contents':
         make_directory(entries[key])
+        os.chdir('..')
       elif key == 'type' and entries[key] == 'directory':
         type_directory = True
         type_file == False
@@ -29,7 +18,6 @@ def make_directory(entries): #TODO fix recursion over directories
       elif type_directory == True and key == 'name':
         os.makedirs(entries[key], exist_ok=True)
         os.chdir(entries[key])
-        os.chdir('..')
         type_directory = False
       elif type_file == True and key == 'name':
         with open(entries['name'], 'w'):
