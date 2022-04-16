@@ -52,9 +52,7 @@
               "name": "docs",
               "contents": [
                 {
-                  "type": "file"
-                },
-                {
+                  "type": "file",
                   "name": "index.md"
                 }
               ]
