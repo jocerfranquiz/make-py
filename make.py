@@ -4,7 +4,7 @@ import os
 def make_directory(entries):
   '''
   This function creates the directory structure and files
-   specified in structure.yaml
+   specified in structure.yml
   ''' 
   if isinstance(entries, dict):
     type_file = None
@@ -34,7 +34,7 @@ def make_directory(entries):
       make_directory(key)
 
 if __name__ == '__main__':
-  with open("structure.yaml", "r") as f:
+  with open("structure.yml", "r") as f:
     structure = yaml.load(f, Loader=yaml.FullLoader)
     make_directory(structure['structure'])
 

@@ -15,6 +15,20 @@ structure:
     contents:
       - type: file
         name: Makefile
+      - type: file
+        name: configure_project.sh
+      - type: file
+        name: dev.Dokerfile
+      - type: file
+        name: prod.Dokerfile
+      - type: file
+        name: pytest.ini
+      - type: file
+        name: requirements.txt
+      - type: file
+        name: setup.cfg
+      - type: file
+        name: .dockerignore
       - type: directory
         name: app
         contents:
@@ -32,18 +46,6 @@ structure:
         contents:
           - type: file
             name: index.md
-      - type: file
-        name: configure_project.sh
-      - type: file
-        name: dev.Dokerfile
-      - type: file
-        name: prod.Dokerfile
-      - type: file
-        name: pytest.ini
-      - type: file
-        name: requirements.txt
-      - type: file
-        name: setup.cfg
       - type: directory
         name: tests
         contents:
