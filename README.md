@@ -4,7 +4,7 @@ Automate the creation of Python projects
 
 ### 2022-04-14
 
-I decided to create a tool to create Pyton projects with four requirements on mind:
+I decided to create a tool to create Python projects with four requirements in mind:
 1. 100% Open Source
 2. 100% Python-based using Pypi libraries
 3. Easy to configure by using config files
