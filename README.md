@@ -1,3 +1,6 @@
+[![License](https://img.shields.io/badge/license-GPLv3-blue)](https://pypi.org/project/make-py/)
+[![Python](https://img.shields.io/badge/python-v3.8.10%2B-green)](https://www.python.org/)
+
 # make-py 🥧
 
 ## Automate the creation of Python projects
