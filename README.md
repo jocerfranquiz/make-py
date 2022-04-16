@@ -1,6 +1,6 @@
 # make-py 🥧
 
-Automate the creation of Python projects
+## Automate the creation of Python projects
 
 ### 2022-04-14
 
@@ -29,3 +29,8 @@ I didn't find what I want. So, I decided to create a tool to automate the creati
 - Add automatic code-document generation
 - and more...
 
+## License
+
+![gplv3-88x31.png](https://www.gnu.org/graphics/gplv3-88x31.png)
+
+**make-py** is licensed under the [GLPv3](http://www.gnu.org/licenses/gpl-3.0.html) license.
