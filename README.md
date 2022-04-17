@@ -8,7 +8,7 @@
 
 [2022-04-14] I wanted to create a python project, but didn't find what I want. It's really weird that we need to take so much time preparing a project, rather than coding. So...
 
-<a href="https://imgbox.com/ZRyhH2WE" target="_blank"><img src="https://images2.imgbox.com/3e/45/ZRyhH2WE_o.gif" alt="image host"/></a>
+![Thanos decides to do it himself](https://images2.imgbox.com/3e/45/ZRyhH2WE_o.gif)
 
 ### I'll do it my self
 
@@ -39,7 +39,5 @@ I decided to create a tool to automate the creation of Python 🐍 projects, wit
 - and more...
 
 ## License
-
-![gplv3-88x31.png](https://www.gnu.org/graphics/gplv3-88x31.png)
 
 **make-py** is licensed under the [GLPv3](http://www.gnu.org/licenses/gpl-3.0.html) license.
