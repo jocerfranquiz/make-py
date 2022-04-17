@@ -6,9 +6,13 @@
 
 ## Automate the creation of Python projects
 
-### 2022-04-14
+[2022-04-14] I wanted to create a python project, but didn't find what I want. It's really weird that we need to take so much time preparing a project, rather than coding. So...
 
-I didn't find what I want. So, I decided to create a tool to automate the creation of Python 🐍 projects, with five requirements in mind:
+<a href="https://imgbox.com/ZRyhH2WE" target="_blank"><img src="https://images2.imgbox.com/3e/45/ZRyhH2WE_o.gif" alt="image host"/></a>
+
+### I'll do it my self
+
+I decided to create a tool to automate the creation of Python 🐍 projects, with five requirements in mind:
 
 1. 100% Open Source
 2. 100% Python-based using Pypi libraries
@@ -16,7 +20,7 @@ I didn't find what I want. So, I decided to create a tool to automate the creati
 4. Independent from third party tools or dependencies (let's see about that 😅)
 5. Batteries included (which means to include an install script and a dummy running project to learn to use the tool)
 
-## 💻 TODOs
+### 💻 TODOs
 
 - Create a dummy python project for testing
 - Add `try/excepts`
