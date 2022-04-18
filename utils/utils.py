@@ -58,3 +58,46 @@ def traverse(obj, transform = None):
   elif isinstance(obj,list) and len(obj)>0:
     for key in obj:
       traverse(key)
+
+def transform(x):
+
+  if x['type'] == 'directory':
+
+    print(f"directory: {x['name']}")
+
+    if len(x['contents']) > 0:
+      traverse(x['contents'], transform)
+
+  if x['type'] == 'file':
+
+    print(f"file: {x['name']}")
+
+
+def traverse(x, f):
+
+  if isinstance(x, dict):
+
+    f(x)
+
+  if isinstance(x, list):
+
+    for l in x:
+      traverse(l, f)
+
+
+if __name__ == '__main__':
+
+  x = {
+       'type':'directory',
+       'name':'dir-a',
+       'contents':[
+             {'type':'file','name':'f-1'},
+             {'type':'file','name':'f-2'},
+             {'type':'directory',
+              'name':'dir-b',
+              'contents':[]
+             }
+           ]
+      }
+
+  traverse(x, transform)
