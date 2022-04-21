@@ -1,42 +1,30 @@
 import yaml
 import os
+import utils.utils as utils
 
-def make_directory(entries):
+# TODO add log register
+def transform(x):
+  '''Apply a function to objrcts in the structure
+  Args:
+      x (dict): Dictionary with a valid project structure
   '''
-  This function creates the directory structure and files
-   specified in structure.yml
-  ''' 
-  if isinstance(entries, dict):
-    type_file = None
-    type_directory = None
+  if x['type'] == 'directory':
+    print(f"directory: {x['name']}")
+    utils.create_directory(x['name'])
 
-    for key in entries:
-      if key == 'contents':
-        make_directory(entries[key])
-        os.chdir('..')
-      elif key == 'type' and entries[key] == 'directory':
-        type_directory = True
-        type_file == False
-      elif key == 'type' and entries[key] == 'file':
-        type_directory = False
-        type_file = True
-      elif type_directory == True and key == 'name':
-        os.makedirs(entries[key], exist_ok=True)
-        os.chdir(entries[key])
-        type_directory = False
-      elif type_file == True and key == 'name':
-        with open(entries['name'], 'w'):
-          pass
-        type_file = False
+    if len(x['contents']) > 0:
+      os.chdir(x['name'])
+      utils.traverse(x['contents'], transform)
+      os.chdir('..')
 
-  elif isinstance(entries,list) and len(entries)>0:
-    for key in entries:
-      make_directory(key)
+  if x['type'] == 'file':
+    print(f"file: {x['name']}")
+    utils.create_file(x['name'])
 
 if __name__ == '__main__':
   with open("structure.yml", "r") as f:
     structure = yaml.load(f, Loader=yaml.FullLoader)
-    make_directory(structure['structure'])
+    utils.traverse(structure['structure'],transform)
 
 
 

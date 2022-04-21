@@ -23,25 +23,6 @@ def create_directory(dirname, path = '.', permits = '777'):
   '''
   os.makedirs(dirname, exist_ok=True)
 
-# TODO add log register
-# TODO replace in make.py the function for create the ditectory with the new one here
-def transform(x):
-  '''Apply a function to objrcts in the structure
-  Args:
-      x (dict): Dictionary with a valid project structure
-  '''
-  if x['type'] == 'directory':
-    print(f"directory: {x['name']}")
-    create_directory(x['name'])
-
-    if len(x['contents']) > 0:
-      os.chdir(x['name'])
-      traverse(x['contents'], transform)
-      os.chdir('..')
-
-  if x['type'] == 'file':
-    print(f"file: {x['name']}")
-    create_file(x['name'])
 
 # TODO add validations to the structure with try/except and logs
 def traverse(x, f):
@@ -58,28 +39,28 @@ def traverse(x, f):
 
 
 # TODO transfer this code to tests
-if __name__ == '__main__':
+# if __name__ == '__main__':
 
-  x = {
-       'type':'directory',
-       'name':'dir-a',
-       'contents':[
-             {'type':'file','name':'f-1.txt'},
-             {'type':'file','name':'f-2.txt'},
-             {'type':'directory',
-              'name':'dir-b',
-              'contents':[]
-             },
-             {'type':'directory',
-              'name':'dir-c',
-              'contents':[
-                {'type':'file','name':'f-3.txt'},
-              ]
-             },
-           ]
-      }
+#   x = {
+#        'type':'directory',
+#        'name':'dir-a',
+#        'contents':[
+#              {'type':'file','name':'f-1.txt'},
+#              {'type':'file','name':'f-2.txt'},
+#              {'type':'directory',
+#               'name':'dir-b',
+#               'contents':[]
+#              },
+#              {'type':'directory',
+#               'name':'dir-c',
+#               'contents':[
+#                 {'type':'file','name':'f-3.txt'},
+#               ]
+#              },
+#            ]
+#       }
 
-  traverse(x, transform)
+#   traverse(x, transform)
 
 # TODO Create another function to calculate the sha256 of files and directories for testing
 # TODO Use the traverse function to calculate all the sha256.
