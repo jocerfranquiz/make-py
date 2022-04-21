@@ -1,6 +1,6 @@
 import yaml
 import os
-import utils.utils as utils
+import utils
 
 # TODO add log register
 def transform(x):
