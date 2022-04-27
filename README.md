@@ -8,7 +8,7 @@
 
 [2022-04-14] I wanted to create a python project, but didn't find what I want. It's really weird that we need to take so much time preparing a project, rather than coding. So...
 
-![Thanos decides to do it himself](https://images2.imgbox.com/3e/45/ZRyhH2WE_o.gif)
+![Thanos decides to do it himself]()
 
 ### I'll do it my self
 
