@@ -13,16 +13,21 @@ def create_file(fname, mode = 'w'):
   with open(fname, mode):
     pass
 
-# TODO add try/except
-def create_directory(dirname, path = '.', permits = '777'):
-  '''Create new directories
+def create_directory(dirname, path = '.', permits = 777):
+  '''Create a leaf directory and all intermediate ones
+  This is a wrapper to os.makedirs()
+
   Args:
       dirname (str): Name of the directory
       path (str): Path to the directory to be created
-      permits (str): Directory permits
+      permits (int): Directory permits
   '''
-  os.makedirs(dirname, exist_ok=True)
 
+# TODO improve try/except with a good code error and message
+  try:
+    os.makedirs(os.path.join(path, dirname), mode = permits, exist_ok = False)
+  except OSError as err:
+    print(str(err))
 
 # TODO add validations to the structure with try/except and logs
 def traverse(x, f):
