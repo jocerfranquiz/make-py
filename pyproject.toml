@@ -1,0 +1,28 @@
+[project]
+name = "make-py"
+make-pyversion = "0.1.0"
+description = "Creation of Python projects"
+authors = [
+    {name = "newpaxonian", email = "newpaxonian@gmail.com"},
+]
+dependencies = [
+    "pyyaml>=6.0",
+]
+requires-python = ">=3.8"
+license = {text = "GPLv3"}
+[project.optional-dependencies]
+
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=7.1.2",
+]
+
+[build-system]
+requires = ["pdm-pep517"]
+build-backend = "pdm.pep517.api"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  ".", "src/app",
+]
