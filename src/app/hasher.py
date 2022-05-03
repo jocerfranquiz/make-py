@@ -4,7 +4,7 @@ import hashlib
 import os
 
 BYTE_BLOCK = 64 * 1024 # 4KB
-PROJECT_PATH = os.path.relpath()
+PROJECT_PATH = os.path.relpath('/home/newpaxonian/wsl_projects/make-py')
 
 
 def hash_file(fname: str, path: str = PROJECT_PATH, mode: str = 'MD5') -> str:
@@ -21,11 +21,11 @@ def hash_file(fname: str, path: str = PROJECT_PATH, mode: str = 'MD5') -> str:
   hash_function = None
   # TODO add SHA1 and SHA512
   if mode == 'MD5':
-    hash_function = hashlib.md5
+    hash_function = hashlib.md5()
   elif mode == 'SHA256':
-    hash_function = hashlib.sha256
+    hash_function = hashlib.sha256()
     
-  with open(os.path.join(PROJECT_PATH,fname), 'rb') as file:
+  with open(os.path.join(path,fname), 'rb') as file:
     while True:
       file_chunk = file.read(BYTE_BLOCK)
       if not file_chunk:
@@ -47,11 +47,12 @@ def hash_directory(dname: str, path: str = PROJECT_PATH, mode: str = 'MD5', incl
   hash_function = None
   # TODO add SHA1 and SHA512
   if mode == 'MD5':
-    hash_function = hashlib.md5
+    hash_function = hashlib.md5()
   elif mode == 'SHA256':
-    hash_function = hashlib.sha256
+    hash_function = hashlib.sha256()
 
-  if not os.path.isdir(dname):
+  if not os.path.isdir(os.path.join(path,dname)):
+    print(path,dname)
     raise TypeError(f'{dname} is not a directory.')
 
   hashes = []
@@ -71,8 +72,8 @@ def hash_directory(dname: str, path: str = PROJECT_PATH, mode: str = 'MD5', incl
 
   hashes.sort()
 
-  for h in hashes.sort():
-        hash_function.update(h.encode('utf-8'))
+  for h in hashes:
+    hash_function.update(h.encode('utf-8'))
 
   return hash_function.hexdigest()
 

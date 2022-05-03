@@ -22,6 +22,7 @@ test = [
 requires = ["pdm-pep517"]
 build-backend = "pdm.pep517.api"
 
+# Conf for pytest. Add path to your models here
 [tool.pytest.ini_options]
 pythonpath = [
   ".", "src/app",
