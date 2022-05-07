@@ -1,5 +1,6 @@
 
 import os
+from typing import Callable
 
 # TODO write data from template in file
 # TODO add try/except
@@ -13,34 +14,36 @@ def create_file(fname, mode = 'w'):
   with open(fname, mode):
     pass
 
-def create_directory(dirname, path = '.', permits = 777):
+def create_directory(dirname, path = '.', permits = 0o777):
   '''Create a leaf directory and all intermediate ones
   This is a wrapper to os.makedirs()
-
   Args:
       dirname (str): Name of the directory
       path (str): Path to the directory to be created
-      permits (int): Directory permits
+      permits (oct): Directory permits
   '''
-
 # TODO improve try/except with a good code error and message
   try:
     os.makedirs(os.path.join(path, dirname), mode = permits, exist_ok = False)
   except OSError as err:
     print(str(err))
 
-# TODO add validations to the structure with try/except and logs
-def traverse(x, f):
+def traverse(x, f: Callable) -> None:
   '''Traverse dictionary and apply a function to keys and values
   Args:
       x (dict): Dictionary with a valid project structure
       f (function): function to apply to keys and values in `obj`
   '''
-  if isinstance(x, dict):
+  if isinstance(x, dict) and len(x):
     f(x)
-  if isinstance(x, list):
-    for l in x:
-      traverse(l, f)
+  elif isinstance(x, list) and len(x):
+    for item in x:
+      if isinstance(item,dict): 
+        traverse(item, f)
+      else:
+        raise Exception('Not a dictionary node')
+  else:
+    raise Exception('Not a list or dictionary object')
 
 
 # TODO transfer this code to tests

@@ -6,7 +6,7 @@ import utils
 PROJECT_PATH = '.'
 
 # TODO add log register
-def transform(x, path = PROJECT_PATH):
+def transform(x: dict, path: str = PROJECT_PATH) -> None:
   '''Apply a function to objrcts in the structure
   Args:
       x (dict): Dictionary with a valid project structure

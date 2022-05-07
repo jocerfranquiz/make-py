@@ -36,7 +36,10 @@ def hash_file(fname: str, path: str = PROJECT_PATH, mode: str = 'MD5') -> str:
   return hash_function.hexdigest()
 
 
-def hash_directory(dname: str, path: str = PROJECT_PATH, mode: str = 'MD5', include_paths: bool = False):
+def hash_directory(dname: str,
+      path: str = PROJECT_PATH,
+      mode: str = 'MD5',
+      include_paths: bool = False) -> str:
   """ Calculate sha256 for a directory
 
   Args:
