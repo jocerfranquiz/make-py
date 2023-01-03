@@ -6,8 +6,6 @@
 
 ## Automate the creation of Python projects
 
-[2022-04-14] I wanted to create a python project, but didn't find what I want. It's really weird that we need to take so much time preparing a project, rather than coding. 
-
 A really simple tool for **automation** of the creation of Python 🐍 projects. The project has this five requirements:
 
 1. 100% Open Source
@@ -32,7 +30,3 @@ A really simple tool for **automation** of the creation of Python 🐍 projects.
 - [ ] Create Makefile
 - [ ] Add Git integration for `.git` folder and hooks
 - [ ] Add automatic code-document generation
-
-## License
-
-**make-py** is licensed under the [GLPv3](http://www.gnu.org/licenses/gpl-3.0.html) license.
